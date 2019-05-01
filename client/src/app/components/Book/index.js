@@ -1,9 +1,10 @@
 import React from "react";
+import "./style.css";
 
 function BookCard(props) {
     return (
         <div>
-            <div className="card mb-3" style="max-width: 600px;">
+            <div className="card mb-3">
                 <div className="row no-gutters">
                     <div className="col-md-4">
                         <img src={props.image} className="card-img" alt="..." />

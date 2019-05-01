@@ -1,5 +1,5 @@
 import axios from "axios";
-const MY_KEY = "AIzaSyAYdK_kJYpf9FQjT0kZ-9UCjr3UMN1kZJA";
+const MY_KEY = "";
 
 export default {
     getBooks: function (query) {
