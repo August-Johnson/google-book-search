@@ -1,5 +1,15 @@
-h1, h2 {
+nav h1, nav h2 {
     display: inline-block;
     margin-right: 20px;
     padding-left: 50px;
+    color: #FFFFFF;
+}
+
+nav {
+    background-color: #666666;
+    color: #ffffff;
+    padding-top: 10px;
+    position: absolute;
+    top: 0;
+    width: 100%;
 }
