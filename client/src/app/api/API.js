@@ -1,5 +1,5 @@
 import axios from "axios";
-const MY_KEY = "AIzaSyAYdK_kJYpf9FQjT0kZ-9UCjr3UMN1kZJA";
+const MY_KEY = "";
 
 export default {
     getBooks: function (query) {
@@ -12,6 +12,6 @@ export default {
         return axios.post("/api/books/saved", bookData);
     },
     deleteBook: function (id) {
-        return axios.delete("/api/books/" + id);
+        return axios.delete("/api/books/saved/" + id);
     }
 }

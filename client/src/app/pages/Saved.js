@@ -21,9 +21,11 @@ class Saved extends Component {
             .catch((err) => console.log(err));
     }
 
-    deleteBook = (id) => {
+    deleteSavedBook = (id) => {
+        console.log(id);
         API.deleteBook(id)
             .then((res) => {
+                console.log(res);
                 this.getSavedBooks();
             })
             .catch((err) => console.log(err));
@@ -37,13 +39,13 @@ class Saved extends Component {
                         {this.state.saved.map((book) => (
                             <BookCard
                                 key={book.bookId}
-                                id={book.id}
+                                id={book._id}
                                 image={book.image}
                                 title={book.title}
                                 authors={book.authors}
                                 description={book.description}
                                 link={book.link}
-                                onClick={this.deleteBook}
+                                onClick={this.deleteSavedBook}
                                 buttonClassNames={"btn btn-danger card-button"}
                                 buttonType={"Delete"}
                             />
