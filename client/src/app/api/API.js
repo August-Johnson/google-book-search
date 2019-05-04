@@ -1,4 +1,5 @@
 import axios from "axios";
+const dotenv = require("dotenv");
 // const API_KEY = process.env.API_KEY;
 
 export default {
