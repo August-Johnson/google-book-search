@@ -12,7 +12,6 @@ class Home extends Component {
 
     componentDidMount() {
         this.checkForDuplicates();
-        console.log(this.state.results);
     }
 
     handleOnChange = (event) => {
@@ -75,7 +74,6 @@ class Home extends Component {
         API.getSavedBooks()
             .then((res) => {
                 const duplicateBookIds = res.data.map((book) => book.bookId);
-                console.log(duplicateBookIds);
                 this.setState({ results: this.state.results.filter((book) => duplicateBookIds.indexOf(book.id) === -1) })
             })
             .catch((err) => console.log(err));
