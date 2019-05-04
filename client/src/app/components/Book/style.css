@@ -2,3 +2,9 @@ img {
     max-width: 220px;
     height: auto;
 }
+
+.card-button {
+    padding: 5px 10px;
+    width: 25%;
+    margin-left: 10px;
+}

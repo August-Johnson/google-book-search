@@ -1,36 +1,59 @@
 import React, { Component } from "react";
-import API from "../api/API";
+import Jumbotron from "../components/Jumbotron";
 import BookCard from "../components/Book";
+import API from "../api/API";
 
 class Saved extends Component {
     state = {
-        saved: [{
-            image: "https://via.placeholder.com/140x100",
-            title: "Title",
-            authors: "Somebody",
-            description: "Something happens in this book."
-        }]
+        saved: []
+    }
+
+    componentDidMount() {
+        this.getSavedBooks();
+    }
+
+    getSavedBooks = () => {
+        API.getSavedBooks()
+            .then((res) => {
+                console.log(res.data);
+                this.setState({ saved: res.data });
+            })
+            .catch((err) => console.log(err));
+    }
+
+    deleteBook = (id) => {
+        API.deleteBook(id)
+            .then((res) => {
+                this.getSavedBooks();
+            })
+            .catch((err) => console.log(err));
     }
 
     render() {
         return (
             <div>
-
                 {this.state.saved.length ? (
-                    <div>
+                    <Jumbotron className={"jumbotron"}>
                         {this.state.saved.map((book) => (
                             <BookCard
+                                key={book.bookId}
+                                id={book.id}
                                 image={book.image}
                                 title={book.title}
                                 authors={book.authors}
                                 description={book.description}
-                                link={book.link} />
+                                link={book.link}
+                                onClick={this.deleteBook}
+                                buttonClassNames={"btn btn-danger card-button"}
+                                buttonType={"Delete"}
+                            />
                         ))}
-                    </div>
+                    </Jumbotron>
                 ) : (
-                        <h3>No Saved Books</h3>
+                        <Jumbotron className={"jumbotron text-center"}>
+                            <h3>No Saved Books</h3>
+                        </Jumbotron>
                     )}
-
             </div>
         );
     }

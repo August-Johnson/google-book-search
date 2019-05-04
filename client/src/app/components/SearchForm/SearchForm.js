@@ -8,7 +8,7 @@ function SearchForm(props) {
             <form onSubmit={props.onSubmit}>
                 <label><h3>Book</h3></label><br />
                 <input type="text" name={props.name} value={props.value} onChange={props.onChange}></input><br />
-                <button type="submit">Search</button>
+                <button type="submit" className="btn btn-primary form-button">Search</button>
             </form>
         </div>
     );

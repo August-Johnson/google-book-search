@@ -16,8 +16,14 @@ function BookCard(props) {
                             <p className="card-text">{props.description}</p>
                         </div>
                         <div className="card-footer">
-                            <a href={props.link}><button>View</button></a>
-                            <button onClick={props.onClick(props.key)}>Save</button>
+                            <a href={props.link} target="_blank" rel="noopener noreferrer">
+                                <button className="btn btn-info card-button">
+                                    View
+                                </button>
+                            </a>
+                            <button onClick={() => props.onClick(props.id)} className={props.buttonClassNames}>
+                                {props.buttonType}
+                            </button>
                         </div>
                     </div>
                 </div>

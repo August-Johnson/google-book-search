@@ -1,4 +1,4 @@
-button {
+.form-button {
     padding: 5px 15px;
     margin-top: 5px;
 }
@@ -22,7 +22,7 @@ input {
         left: 0;
     }
     
-    button {
+    .form-button {
         padding: 8px 20px;
         margin-top: 5px;
         font-weight: 650;

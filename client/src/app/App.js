@@ -5,6 +5,8 @@ import "./App.css";
 import Home from "./pages/Home";
 import Saved from "./pages/Saved";
 import Navbar from "./components/Navbar";
+import Container from "./components/Container";
+import Jumbotron from "./components/Jumbotron";
 
 class App extends Component {
   render() {
@@ -12,10 +14,16 @@ class App extends Component {
       <Router>
         <div>
           <Navbar />
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/saved" component={Saved} />
-          </Switch>
+          <Container>
+            <Jumbotron className={"jumbotron text-center"} >
+              <h1>(React) Google Books Search</h1>
+              <h4>Search for and Save Books of Interest</h4>
+            </Jumbotron>
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/saved" component={Saved} />
+            </Switch>
+          </Container>
         </div>
       </Router>
     );
