@@ -1,5 +1,9 @@
 const router = require("express").Router();
 const booksController = require("../../controllers/booksController");
+const googleController = require("../../controllers/googleController");
+
+router.route("/search/:query")
+    .get(googleController.getBooks)
 
 router.route("/saved")
     // getting all saved books
