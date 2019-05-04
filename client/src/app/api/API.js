@@ -1,5 +1,5 @@
 import axios from "axios";
-const MY_KEY = "";
+const MY_KEY = process.env.API_KEY;
 
 export default {
     getBooks: function (query) {
