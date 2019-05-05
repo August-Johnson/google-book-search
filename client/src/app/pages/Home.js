@@ -24,7 +24,6 @@ class Home extends Component {
     searchForBooks = (query) => {
         API.getBooks(query)
             .then((res) => {
-                console.log(res);
                 const booksArray = [];
                 res.data.items.forEach((bookItem) => (
                     booksArray.push(
