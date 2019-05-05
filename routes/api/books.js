@@ -2,7 +2,7 @@ const router = require("express").Router();
 const booksController = require("../../controllers/booksController");
 const googleController = require("../../controllers/googleController");
 
-router.route("/search/:query")
+router.route("/search/:search")
     .get(googleController.getBooks)
 
 router.route("/saved")
