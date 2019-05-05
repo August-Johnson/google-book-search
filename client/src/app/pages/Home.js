@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
 import SearchForm from "../components/SearchForm/SearchForm";
-import BookCard from "../components/Book";
+import BookCard from "../components/BookCard";
 import API from "../api/API";
 
 class Home extends Component {
@@ -24,12 +24,13 @@ class Home extends Component {
     searchForBooks = (query) => {
         API.getBooks(query)
             .then((res) => {
+                console.log(res);
                 const booksArray = [];
                 res.data.items.forEach((bookItem) => (
                     booksArray.push(
                         {
                             id: bookItem.id,
-                            image: bookItem.volumeInfo.imageLinks.thumbnail,
+                            image: bookItem.volumeInfo.imageLinks ? (bookItem.volumeInfo.imageLinks.thumbnail) : ("https://via.placeholder.com/140x100"),
                             title: bookItem.volumeInfo.title,
                             authors: bookItem.volumeInfo.authors,
                             description: bookItem.volumeInfo.description,

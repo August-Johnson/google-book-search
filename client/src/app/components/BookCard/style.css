@@ -1,6 +1,11 @@
 img {
-    max-width: 220px;
+    width: 220px;
     height: auto;
+    max-width: 300px;
+}
+
+.card-footer {
+    background-color: #FFFFFF;
 }
 
 .card-button {

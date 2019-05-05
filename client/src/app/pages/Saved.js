@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Jumbotron from "../components/Jumbotron";
-import BookCard from "../components/Book";
+import BookCard from "../components/BookCard";
 import API from "../api/API";
 
 class Saved extends Component {
@@ -15,17 +15,14 @@ class Saved extends Component {
     getSavedBooks = () => {
         API.getSavedBooks()
             .then((res) => {
-                console.log(res.data);
                 this.setState({ saved: res.data });
             })
             .catch((err) => console.log(err));
     }
 
     deleteSavedBook = (id) => {
-        console.log(id);
         API.deleteBook(id)
             .then((res) => {
-                console.log(res);
                 this.getSavedBooks();
             })
             .catch((err) => console.log(err));
